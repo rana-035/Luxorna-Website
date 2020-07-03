@@ -1,0 +1,20 @@
+.main-container{
+    padding-top: 40px;
+}
+
+.card{
+    text-align: center;
+     margin-bottom: 10%;
+     border: none;
+ }
+ .card-title{
+color:#74b9ff;
+ }
+ .card  li{
+
+    color:#74b9ff;
+
+list-style-type: none;
+
+
+ }

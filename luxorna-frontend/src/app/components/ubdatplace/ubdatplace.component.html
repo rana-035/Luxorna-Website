@@ -1,0 +1,266 @@
+
+<div class="row">
+    <div class="main-container col-md-7">
+        <h2 class="text-center">Update Place</h2>
+
+
+
+        <button type="button" class="btn savebtn" routerLink="/adminlayout/places">Save</button>
+
+        <button type="button" class="btn cancelbutn">Cancel</button>
+
+           
+            <div class="form-group">
+            <label for="inputState">Choose Section</label>
+
+
+            <Select id="colorselector">
+                <option value="red">hotels
+
+
+                </option>
+                <option value="yellow">Restaurant</option>
+                <option value="blue">Temple</option>
+            </Select>
+        </div>
+
+
+            <div id="red" class="colors">
+                <div class="hotels">
+
+                    <form>
+                        <div class="form-group">
+                            <label for="">Name </label>
+                            <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
+
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <label for="description">description</label>
+                            <textarea class="form-control" id="hoteldisc" rows="3"></textarea>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="description">Price</label>
+                            <input type="text" class="form-control" id="price">
+                        </div>
+
+
+                        <div class="form-group">
+                            <select class="custom-select" required>
+                                <option value="">stars</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                                <option value="3">Four</option>
+                                <option value="3">Five</option>
+                            </select>
+
+                        </div>
+
+
+                        <div class="input-group">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="hotelpic">
+                                <label class="custom-file-label" for="hotelpic">Choose Image</label>
+                            </div>
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="button">Cancel</button>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="metataghotel">Meta tag </label>
+                            <input type="text" class="form-control" id="metataghotel">
+
+                        </div>
+
+                    </form>
+                </div>
+
+
+            </div>
+            <div id="yellow" class="colors" style="display:none">
+
+                <!--start restaurant-->
+                <div class="restaurant">
+                    <form>
+
+                        <div class="form-group">
+                            <label for="namerest">Name </label>
+                            <input type="text" class="form-control" id="namerest" aria-describedby="emailHelp">
+
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <label for="desctrest">description</label>
+                            <textarea class="form-control" id="desctrest" rows="3"></textarea>
+                        </div>
+                    </form>
+
+                       <hr>
+                       <h4>Menu</h4>
+                       <table class="table mt-10">
+                        <thead class="thead-dark">
+                          <tr>
+                             <th><input type="checkbox" id="tablerest" name="tablerest"></th> 
+                            <th scope="col">Image</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Size</th>
+                            <th scope="col">Price</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><input type="checkbox" id="admincheck1" name="admincheck1"></td>
+                            <td scope="row"><img src="assets/pictures/imgRestaurant/13.jpeg" width="100px" height="100px"></td>
+                            <td>item1</td>
+                            <td>larg</td>
+                            <td>20 pound</td>
+                          </tr>
+                          <tr>
+                            <td><input type="checkbox" id="admincheck2" name="admincheck2"></td>
+                            <td scope="row"><img src="assets/pictures/imgRestaurant/11.jpeg" width="100px" height="100px"></td>
+                            <td>item1</td>
+                            <td>larg</td>
+                            <td>20 pound</td>
+                          </tr>
+                          
+                            <tr>
+                                <td><input type="checkbox" id="admincheck3" name="admincheck3"></td>
+                                <td scope="row"><img src="assets/pictures/imgRestaurant/12.jpeg" width="100px" height="100px"></td>
+                                <td>item1</td>
+                                <td>larg</td>
+                                <td>20 pound</td>
+                              </tr>
+                        </tbody>
+                      </table>
+                      
+                     
+                     <form>
+                       <div class="form-group">
+                        <input type="text" class="form-control" id="menuitem" aria-describedby="emailHelp" placeholder="Item Name">
+                     
+                    </div>
+
+
+                    <div class="form-group">
+                        <select class="custom-select" required>
+                            <option value="">Size</option>
+                            <option value="1">Small</option>
+                            <option value="2">large</option>
+                            <option value="3">medieum</option>
+                        </select>
+                        </div>
+
+
+                        <div class="form-group">
+                            <input placeholder="quantity" required type="number" value="" min="-100" max="100"/>
+                        </div>
+                      
+                  
+
+                       <!--upload pic--> 
+                        <div class="input-group">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="menupic">
+                                <label class="custom-file-label" for="menupic">Choose Image</label>
+                            </div>
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="button">Add</button>
+                            </div>
+                        </div>
+                        <hr>
+                        
+                        <div class="input-group">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="restpic">
+                                <label class="custom-file-label" for="restpic">Choose Image</label>
+                            </div>
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="button">Cancel</button>
+                            </div>
+                        </div>
+                    </form>
+
+                      <div class="row images">
+                          <div class="col-sm"><img src="assets/pictures/imgRestaurant/12.jpeg" width="100px" height="100px"></div>
+                          <div class="col-sm"><img src="assets/pictures/imgRestaurant/13.jpeg" width="100px" height="100px"></div>
+                          <div class="col-sm"><img src="assets/pictures/imgRestaurant/11.jpeg" width="100px" height="100px"></div>
+                          <div class="col-sm"><img src="assets/pictures/imgRestaurant/14.jpeg" width="100px" height="100px"></div>
+                      </div>
+
+
+                  <form>
+                        <div class="form-group">
+                            <label for="metatagrest">Meta tag </label>
+                            <input type="text" class="form-control" id="metatagrest" aria-describedby="emailHelp">
+
+                        </div>
+                    </form>
+
+                </div>
+                  <!--end restaurant-->
+
+            </div>
+            <div id="blue" class="colors" style="display:none"> 
+                <div class="temple">
+
+                    <form>
+
+                        <div class="form-group">
+                            <label for="nametemple">Name </label>
+                            <input type="text" class="form-control" id="nametemple" aria-describedby="emailHelp">
+
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <label for="desctemple">description</label>
+                            <textarea class="form-control" id="desctemple" rows="3"></textarea>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="description">Ticketprice</label>
+                            <input type="text" class="form-control" id="Ticketprice">
+                        </div>
+                    
+
+
+                   
+
+                        <div class="input-group">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="inputGroupFile04">
+                                <label class="custom-file-label" for="inputGroupFile04">Choose Image</label>
+                            </div>
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="button">Cancel</button>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="metatagtemple">Meta tag </label>
+                            <input type="text" class="form-control" id="metatagtemple" aria-describedby="emailHelp">
+
+                        </div>
+
+
+                    </form>
+
+
+            </div></div>
+
+
+
+
+    </div>
+</div>

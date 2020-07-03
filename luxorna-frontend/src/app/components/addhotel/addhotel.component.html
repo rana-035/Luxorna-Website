@@ -1,0 +1,71 @@
+<div class=row>
+    <div class="main-container col-md-7">
+     <h2 class="text-center">Add New Hotel</h2>
+     <!-- <h3 class="text-center">Hotel</h3> -->
+    
+    
+     <button type="button" class="btn savebtn"   (click)="addHotel()">Save</button>
+    
+     <button type="button" class="btn cancelbutn">Cancel</button>
+    <!--start of hotels -->
+    <div class="hotels">
+    
+        <form>
+            <div class="form-group">
+                <label for="">Name </label>
+                <input type="text" class="form-control" id="name" [(ngModel)]="HotelName" name="HotelName" aria-describedby="emailHelp" required>
+    
+            </div>
+    
+    
+    
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" [(ngModel)]="HotelDescription" required name="HotelDescription" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="description">Address</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" required [(ngModel)]="Address" name="Address" rows="3"></textarea>
+            </div>
+    
+    
+            <div class="form-group">
+                <label for="description">Price</label>
+                <input type="text" class="form-control" id="price" required [(ngModel)]="HotelPrice" name="HotelPrice">
+            </div>
+    
+    
+            <div class="form-group">
+                <select (change)="selectChangeHandler($event)" class="custom-select" required>
+                    <option value="0">stars</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+    
+            </div>
+            <button class="btn btn-outline-secondary" type="button" (click)="upload()">Upload</button>
+            <div class="input-group">
+                <div class="custom-file">
+                    <input type="file" (change)="onFileChange($event)"  accept="image/*" name="HotelImages" class="custom-file-input" id="inputGroupFile04" required multiple>
+                    <label class="custom-file-label" for="inputGroupFile04">Choose Image</label>
+                     <!-- <input type="button" value="Upload" (click)="upload()"> -->
+        
+                </div>
+                <br/>
+                <!-- <img *ngFor='let url of HotelImages' [src]="url" height="150" width="200px" style="margin: 3px;"> <br/> -->
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button">Cancel</button>
+                </div>
+            </div>
+    
+    
+            
+    
+        </form>
+    </div>
+    <!--end of hotel-->
+    </div>
+    </div>

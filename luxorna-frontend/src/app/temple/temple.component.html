@@ -1,0 +1,148 @@
+
+
+
+
+
+
+
+
+    <h1 class="text-center  ">Temples</h1>
+
+    <!--dropdownbox-->
+
+    <!-- <div class="form-group col-md-4">
+      
+      <select id="inputState" class="form-control selebtn ">
+        <option selected>Choose by category</option>
+        <option>Hotel</option>
+        <option>Restaurant</option>
+        <option>Temples</option>
+
+
+      </select>
+    </div> -->
+
+<!--dropdownbox-->
+    <div class="row">
+      <div class="col-md-3">
+    <div class="btn-group">
+        <button type="button " class="btn "  routerLink="/adminlayout/addtemple">Add New Temple</button>
+        <button type="button"  class="btn ">Delete</button>
+      </div>
+    </div>
+
+    <div class="col-md-3 ">
+        <div class="md-form active-purple active-purple-2 mb-3">
+            <input class="form-control" type="text" placeholder=" Search By Hotel Name" aria-label="Search" [(ngModel)]="term">
+          </div>
+    </div>
+    </div>
+
+    
+      <div >
+         <table class=" table table-bordered table-striped table-hover text-center table mt-10"> 
+
+           <thead  class="thead-dark">
+            
+            <tr>
+              <th scope="col" hidden>#</th>
+              <!-- <th scope="col" >Select </th> -->
+
+              <th scope="col" >Name </th>
+              <th scope="col" >Address</th>
+              <th scope="col" >Create Date</th>
+              <th scope="col" >Section</th>
+              <th scope="col" ></th>
+
+
+
+              <!-- <th scope="col">Words</th>
+              <th scope="col">Shares</th> -->
+
+              <!-- filter:term ,filter:term , -->
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor = "let temple of (temple|filterName:term )| paginate:config">
+               <th scope="row" hidden >{{temple.ID}} </th>
+                <!-- <td>
+                  <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="customCheck1" >
+                      <label class="custom-control-label" for="customCheck1">1</label>
+                  </div>
+                </td> -->
+                <td>{{temple.Name}}</td>
+                <td>{{temple.Address}}</td>
+                <td>{{temple.CreateDate}}</td>
+                <td>{{temple.SectionName}}</td>
+                <!-- routerLink="/addrestaurant/{{resturant.ID}}" -->
+                <!-- (click)="goToUpdate(resturant.ID)" -->
+                <td><img src="assets/pictures/iconDetaile.png" width="50px" height="50px" 
+                  routerLink="/adminlayout/update-temple/{{temple.ID}}"  ></td>
+                <td><img src="assets/pictures/iconDetaile.png" width="50px" height="50px" 
+                    (click)="deleteTemple(temple.ID)"></td>
+
+
+                
+           
+            </tr>
+         
+              <!-- <td>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="customCheck1" checked>
+                    <label class="custom-control-label" for="customCheck1">1</label>
+                </div>
+              </td> -->
+              <!-- <td class="w-25">
+                <img src="assets/pictures/6.png" class="img-fluid img-thumbnail" >
+            </td> -->
+           <!-- <td>Etab</td>
+              <td>   <a href="#"  routerLink="/adminlayout/updateplace">Hotels</a>   </td>
+                 <td>913</td>
+              <td>2.846</td> 
+            </tr> -->
+
+            <!-- <tr>
+                <td>
+                  <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="customCheck1" checked>
+                      <label class="custom-control-label" for="customCheck1">2</label>
+                  </div>
+                </td>
+                <td class="w-25">
+                  <img src="assets/pictures/3.jpg" class="img-fluid img-thumbnail" >
+              </td>
+                <td>karnak</td>
+                <td><a href="#" routerLink="/adminlayout/updateplace">Temples</a> </td>
+              
+              </tr> -->
+
+
+        <!-- <tr>
+                <td>
+                  <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="customCheck1" checked>
+                      <label class="custom-control-label" for="customCheck1">4</label>
+                  </div>
+                </td>
+                <td class="w-25">
+                  <img src="assets/pictures/7.jpg" class="img-fluid img-thumbnail" >
+              </td>
+
+              <td>Pizza Home</td>
+                <td><a href="#" routerLink="/adminlayout/updateplace">Restaurant</a> </td>
+              
+              -->
+           
+
+
+         
+          </tbody>
+        </table>
+        
+      </div>
+      <div class="text-center">
+        <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+      </div>
+  
+

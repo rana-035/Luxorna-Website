@@ -1,0 +1,22 @@
+
+
+label{
+  
+    font-size:20px
+}
+button{ color:#fff;
+    background-color: #353a40;
+    transition: all .5s ease-in-out;
+   
+}
+::placeholder {
+    color: #353a40;
+    opacity: 1;
+  }
+  button:hover{
+    background-color: #74b9ff;
+    transform:scale(1,1)
+    }
+     .inpst{
+        background-color: #e2e4e8;
+    } 

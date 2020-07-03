@@ -1,0 +1,183 @@
+<div class=row>
+    <div class="main-container col-md-7">
+        <h2 class="text-center">Add New Place </h2>
+        <h3 class="text-center">Restaurant</h3>
+
+
+
+        <button type="button" class="btn savebtn" routerLink="/adminlayout/places">Save</button>
+
+        <button type="button" class="btn cancelbutn">Cancel</button>
+        <!--start restaurant-->
+        <div class="restaurant">
+            <form>
+
+                <div class="form-group">
+                    <label for="namerest">Name </label>
+                    <input type="text" class="form-control" id="namerest" aria-describedby="emailHelp">
+                </div>
+                <div class="form-group">
+                    <label for="desctrest">description</label>
+                    <textarea class="form-control" id="desctrest" rows="3"></textarea>
+                </div>
+                <hr>
+                <!--start of menu-->
+                <h4 class="text-center">Menu</h4>
+                <table class="table mt-10">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th><input type="checkbox" id="adminheader" name="adminheader"></th>
+                            <th scope="col">Image</th>
+                            <th scope="col">Name</th>
+                            <!-- <th scope="col"></th> -->
+                            <th scope="col"><img src="assets/pictures/icon_add.jpg" width="50px" height="40px"
+                                     data-toggle="modal" data-target="#staticBackdrop"></th>
+
+                            <!-- <th scope="col">Size</th>
+                            <th scope="col">Price</th> -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of resturants">
+                            <td><input type="checkbox" id="admincheck1" name="admincheck1"></td>
+                            <td scope="row"><img src="assets/pictures/imgRestaurant/{{item.Image}}" width="100px"
+                                    height="100px"></td>
+                            <td>{{item.Name}}</td>
+                            <!-- <td>{{item.ItemDetail[0].Size}}</td>
+                                <td>{{item.ItemDetail[0].Price}} LE</td> -->
+                            <td><img src="assets/pictures/iconEdit.jpg" width="50px" height="40px"
+                                    (click)="showItem(item)" data-toggle="modal" data-target="#staticBackdrop">
+                                <img src="assets/pictures/iconDelete.jpg" width="50px" height="40px"
+                                    (click)="deleteItem(item)"></td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- <div class="form-group">
+                    <input type="text" class="form-control" id="menuitem" aria-describedby="emailHelp"
+                        placeholder="Item Name">
+
+                </div> -->
+                <!-- <div class="form-group">
+                    <select class="custom-select" required>
+                        <option value="">Size</option>
+                        <option value="1">Small</option>
+                        <option value="2">large</option>
+                        <option value="3">medieum</option>
+                    </select>
+                </div> -->
+                <!-- <div class="form-group">
+                    <input placeholder="quantity" required type="number" value="" min="-100" max="100" />
+                </div> -->
+                <!--upload pic-->
+                <!-- <div class="input-group">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="inputGroupFile04">
+                        <label class="custom-file-label" for="inputGroupFile04">Choose Image</label>
+                    </div>
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button">Add</button>
+                    </div>
+                </div> -->
+                <hr>
+                <!--end of menu-->
+                <div class="input-group">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="inputGroupFile04">
+                        <label class="custom-file-label" for="inputGroupFile04">Choose Image</label>
+                    </div>
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button">Cancel</button>
+                    </div>
+                </div>
+                <div class="row images">
+                    <div class="col-md"><img src="assets/pictures/imgRestaurant/14.jpeg" width="100px" height="100px">
+                    </div>
+                    <div class="col-md"><img src="assets/pictures/imgRestaurant/12.jpeg" width="100px" height="100px">
+                    </div>
+                    <div class="col-md"><img src="assets/pictures/imgRestaurant/13.jpeg" width="100px" height="100px">
+                    </div>
+                    <div class="col-md"><img src="assets/pictures/imgRestaurant/14.jpeg" width="100px" height="100px">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!--end of restaurant-->
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+    Launch static backdrop modal
+  </button> -->
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Adding New Item </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <!-- <form (ngSubmit)="addSingleItem()"> -->
+
+        <form (submit)="addSingleItem()">
+            <div class="modal-body">
+               
+                <div class="text-center">
+                        <img [src]="ImageItem" class="rounded-circle" alt="Item Image" width="70px" height="100px">
+                </div>
+                <br>
+                <div class="form-group">
+                </div>
+                <div class="form-group">
+                        <input type="text" class="form-control" name="name"   id="itemName" aria-describedby="emailHelp" placeholder="Item Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="desctrest">Small</label>
+                        <input type="number"  type="number" min="0" value="0" name="smallSize" id="smallSize" placeholder="Price"  />    
+                </div>  
+                <div class="form-group">
+                    <label for="desctrest">Medium</label>
+                    <input min=0 type="number" value="0" name="mediumSize" id="mediumSize" placeholder="Price"  />
+                    
+                </div>        
+                <div class="form-group">
+                    <label for="desctrest">Large</label>
+                    <input   min=0 type="number" value="0" name="largeSize" id="largeSize" placeholder="Price" />
+                    
+                </div>   
+                <div class="input-group">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="menupic" (change)="fileHandler($event.target.files)" required>
+                        <label class="custom-file-label" for="menupic" >{{imgPath}}</label>
+                    </div>
+                    <!-- </div> -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                        (click)="cancleItemUpdate()">Cancel</button>
+                    <button type="submit" class="btn btn-primary" >OK</button>
+            </div>
+        
+         </form>
+      </div>
+    </div>
+</div>

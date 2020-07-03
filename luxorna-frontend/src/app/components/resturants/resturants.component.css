@@ -1,0 +1,39 @@
+button{
+  margin-bottom:5px;
+  margin-left: 10px;
+  color:#fff;
+  background-color: #353a40;
+  transition: all .5s ease-in-out;
+  margin-right: 5px;
+  font-size: .9rem;
+  
+ 
+ }
+ button:hover{
+ background-color: #74b9ff;
+ }
+ .selebtn{
+   display :inline-block;
+   margin-bottom: 10px;
+
+ }
+
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting:before,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting_desc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:before {
+bottom: .5em;
+}
+
+
+
+
+
+
+
